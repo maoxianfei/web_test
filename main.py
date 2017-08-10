@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # filename: main.py
 import web
-from wx_server.handle import Handle
+from weixin_server.handle import Handle
 urls=(
 	'/','index',
 	'/demo','demo',
