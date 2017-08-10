@@ -23,12 +23,12 @@ class demo1(object):
 		return open(r'demo1/index.html','r').read()
 class demo2(object):
 	"""docstring for demo"""
-	def GET(self,name):
+	def GET(self):
 		# render=web.template.frender("demo1/index.html")
 		return open(r'demo1/index2.html','r').read()
 class demo3(object):
 	"""docstring for demo"""
-	def GET(self,name):
+	def GET(self):
 		# render=web.template.frender("demo1/index.html")
 		return open(r'demo1/heart.html','r').read()
 		
