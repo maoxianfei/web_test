@@ -1,8 +1,12 @@
+# -*- coding: utf-8 -*-
+# filename: main.py
 import web
+from wx_server.handle import Handle
 urls=(
 	'/','index',
 	'/demo','demo',
-	'/aa','index'
+	'/aa','index',
+	'/wx', 'Handle',
 )
 app=web.application(urls,globals())
 

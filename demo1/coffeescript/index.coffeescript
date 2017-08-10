@@ -28,7 +28,6 @@ body {
  * 来看看吧
  *
  */
-
 pre { 
   position: fixed; width: 48%;
   top: 30px; bottom: 30px; left: 26%;
@@ -50,7 +49,7 @@ pre {
 
 pre em:not(.comment) { font-style: normal; }
 
-.comment       { color: #707e84; }
+.comment       { color: #507e84; }
 .selector      { color: #c66c75; }
 .selector .key { color: #c66c75; }
 .key           { color: #c7ccd4; }
@@ -78,8 +77,8 @@ pre { left: 50%; }
           transform: scale(0.95);
 }
 
-#heart { z-index: 8; }
-#echo  { z-index: 7; }
+#heart { z-index: 6; }
+#echo  { z-index: 5; }
 
 #heart::before, #heart::after, #echo::before, #echo::after {
     content: '';
