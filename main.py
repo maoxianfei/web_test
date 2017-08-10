@@ -7,7 +7,7 @@ urls=(
 	'/hello','index',#根目录
 	'/aa','index',
 	'/wx', 'Handle',#微信公众号消息接收地址
-	'/(.*)','demo',#演示程序
+	'/(.*)','demo',#匹配的内容回会传入到函数里
 )
 app=web.application(urls,globals())
 
@@ -18,7 +18,7 @@ class index(object):
 
 class demo(object):
 	"""docstring for demo"""
-	def GET(self):
+	def GET(self,name):
 		# render=web.template.frender("demo1/index.html")
 		return open(r'demo1/index.html','r').read()
 		
