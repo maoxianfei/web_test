@@ -2,11 +2,13 @@
 # filename: main.py
 import web
 from weixin_server.handle import Handle
+import time
 #url映射
 urls=(
 	'/zhihu','demo2',#根目录
 	'/love','demo3',
 	'/wx', 'Handle',#微信公众号消息接收地址
+	'/time','timeer',#时间记录
 	'/(.*)','demo1',#匹配的内容回会传入到函数里
 )
 app=web.application(urls,globals())
@@ -31,6 +33,11 @@ class demo3(object):
 	def GET(self):
 		# render=web.template.frender("demo1/index.html")
 		return open(r'demo1/heart.html','r').read()
+class timer(object):
+	"""docstring for demo"""
+	def GET(self):
+		# render=web.template.frender("demo1/index.html")
+		return time.asctime(time.localtime(time.time()))
 		
 if __name__ == '__main__':
 	app.run()
