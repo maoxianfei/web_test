@@ -8,7 +8,7 @@ urls=(
 	'/zhihu','demo2',#根目录
 	'/love','demo3',
 	'/wx', 'Handle',#微信公众号消息接收地址
-	'/time','timeer',#时间记录
+	'/time','timer',#时间记录
 	'/(.*)','demo1',#匹配的内容回会传入到函数里
 )
 app=web.application(urls,globals())
