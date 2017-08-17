@@ -37,7 +37,10 @@ class timer(object):
 	"""docstring for demo"""
 	def GET(self):
 		# render=web.template.frender("demo1/index.html")
-		return time.asctime(time.localtime(time.time()))
+		a=time.asctime(time.localtime(time.time()))
+		b=str(time.time())
+		c=a+'\n'+b
+		return c
 		
 if __name__ == '__main__':
 	app.run()
