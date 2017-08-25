@@ -3,20 +3,25 @@
 import web
 from weixin_server.handle import Handle
 import time
+import base64
+import hashlib
 #url映射
 urls=(
 	'/zhihu','demo2',#根目录
 	'/love','demo3',
 	'/wx', 'Handle',#微信公众号消息接收地址
 	'/time','timer',#时间记录
-	'/(.*)','demo1',#匹配的内容回会传入到函数里
+	'/test','index',
+	# '/(.*)','demo1',#匹配的内容回会传入到函数里
+
 )
 app=web.application(urls,globals())
-
+render=web.template.render('demo2')
 class index(object):
-	"""docstring for index"""
+	"""page"""
 	def GET(self):
-		return "Hello,World"
+		
+		return render.first()
 
 class demo1(object):
 	"""docstring for demo"""
@@ -44,3 +49,9 @@ class timer(object):
 		
 if __name__ == '__main__':
 	app.run()
+	# print base64.b64encode('')
+	# print base64.b64decode('96e79218965eb72c92a549dd5a330112')
+	# m=hashlib.md5()
+	# m.update('111111')
+	# print m.hexdigest()
+
