@@ -16,11 +16,11 @@ urls=(
 
 )
 app=web.application(urls,globals())
-render=web.template.render('demo2')
+
 class index(object):
 	"""page"""
 	def GET(self):
-		
+		render=web.template.render('demo2')
 		return render.first()
 
 class demo1(object):
