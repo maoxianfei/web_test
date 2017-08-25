@@ -20,7 +20,7 @@ app=web.application(urls,globals())
 class index(object):
 	"""page"""
 	def GET(self):
-		render=web.template.render('demo2')
+		render=web.template.render('./')
 		return render.first()
 
 class demo1(object):
