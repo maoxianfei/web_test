@@ -12,7 +12,9 @@ urls=(
 	'/wx', 'Handle',#微信公众号消息接收地址
 	'/time','timer',#时间记录
 	'/test','index',
-	# '/(.*)','demo1',#匹配的内容回会传入到函数里
+	'/markdown','markdown',
+	'/ip','ip',#return user ip
+	'/(.*)','demo1',#匹配的内容回会传入到函数里
 
 )
 app=web.application(urls,globals())
@@ -22,11 +24,21 @@ class index(object):
 	def GET(self):
 		render=web.template.render('./')
 		return render.first()
+class ip(object):
+	def GET(self):
+		tmp=web.ctx.ip
+		return tmp
+class markdown(object):
+	"""markdown编辑器"""
+	def GET(self):
+		
+		return web.seeother('https://www.zybuluo.com')
 
 class demo1(object):
 	"""docstring for demo"""
 	def GET(self,name):
 		# render=web.template.frender("demo1/index.html")
+		print name
 		return open(r'demo1/index.html','r').read()
 class demo2(object):
 	"""docstring for demo"""
@@ -49,6 +61,7 @@ class timer(object):
 		
 if __name__ == '__main__':
 	app.run()
+	# print 'hel'
 	# print base64.b64encode('')
 	# print base64.b64decode('96e79218965eb72c92a549dd5a330112')
 	# m=hashlib.md5()
